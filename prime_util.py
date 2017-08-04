@@ -1,3 +1,5 @@
+import math
+
 def generate_prime_list(limit):
     prime_dict = [True] * limit
     prime_dict[0] = False
@@ -11,3 +13,9 @@ def generate_prime_list(limit):
                 prime_dict[i*mult] = False
                 mult += 1
     return prime_list
+
+def is_prime(n):
+    for i in xrange(2, int(math.sqrt(n))):
+        if n % i == 0:
+            return False
+    return True
